@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: app
+    build: 
+      context: "./app"
+      dockerfile: Dockerfile
+    image: "app-golang:1.0.0"
+    environment:
+      - "APP_PORT=8080"
+    ports:
+      - "8080:8080"
+
+# Catata: jika docker compose build, dia hanya build image yang terdapat pada dockerfile. Namun, jika docker compose create dia akan membuat kontainer juga
+#Jika dibuild ulang image nya, maka container tetap menggunakan image yang lama. Tidak menggunakan image yang baru

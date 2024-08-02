@@ -1,0 +1,19 @@
+services:
+  mongodb1:
+    image: mongo:latest
+    container_name: mongodb1
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITIDB_ROOT_USERNAME: fajar
+      MONGO_INITIDB_ROOT_PASSWORD: Kepo7777
+      MONGO_INITIDB_DATABASE: admin
+    volumes:
+      - type: volume
+        source: mongo-volume-1
+        target: "/data/db"
+        read_only: false
+volumes:
+  mongo-volume-1:
+    name: mongo-volume-1
+    

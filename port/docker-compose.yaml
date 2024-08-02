@@ -1,0 +1,14 @@
+services:
+  #service nginx
+  nginx-port:
+    image: nginx:latest
+    container_name: nginx-port
+    ports:
+      - protocol: tcp
+        published: 8080
+        target: 80
+  nginx-short-port:
+    image: nginx:latest
+    container_name: nginx-short-port
+    ports:
+      - "8081:80"    

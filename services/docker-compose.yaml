@@ -1,0 +1,9 @@
+services:
+  #service nginx
+  nginx-service:
+    image: nginx:latest
+    container_name: nginx-service
+  #service mongodb
+  mongodb-service:
+    image: mongo:latest
+    container_name: mongodb-service
